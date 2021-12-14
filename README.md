@@ -1,1 +1,1 @@
-Bu uygulamada Parse kullanıldı. Parse yönetimi için back4app kullanıldı.
+Bu uygulamada Parse kullanıldı ve Parse yönetimi için back4app kullanıldı.
