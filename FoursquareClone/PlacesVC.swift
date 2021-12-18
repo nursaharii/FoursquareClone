@@ -22,7 +22,7 @@ class PlacesVC: UIViewController {
     }
     
     @objc func addBtn() {
-        //Segue
+        self.performSegue(withIdentifier: "toAddPlacesVC", sender: nil)
     }
     
     @objc func logoutBtn(){
