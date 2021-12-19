@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8470429E276924130083078F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8470429D276924130083078F /* .gitignore */; };
+		8484632E276F931B001E8CD6 /* PlacesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484632D276F931B001E8CD6 /* PlacesModel.swift */; };
 		84B41C89276E6AB600CD270F /* PlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B41C88276E6AB600CD270F /* PlacesVC.swift */; };
 		84B41C8B276E778300CD270F /* addPlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B41C8A276E778300CD270F /* addPlacesVC.swift */; };
 		84B41C8D276E788100CD270F /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B41C8C276E788100CD270F /* MapVC.swift */; };
@@ -25,6 +26,7 @@
 		442A8F4D8F9BF599B2497D56 /* Pods-FoursquareClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareClone.release.xcconfig"; path = "Target Support Files/Pods-FoursquareClone/Pods-FoursquareClone.release.xcconfig"; sourceTree = "<group>"; };
 		785EDC56A5743C240A4CA1BB /* Pods-FoursquareClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareClone.debug.xcconfig"; path = "Target Support Files/Pods-FoursquareClone/Pods-FoursquareClone.debug.xcconfig"; sourceTree = "<group>"; };
 		8470429D276924130083078F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		8484632D276F931B001E8CD6 /* PlacesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesModel.swift; sourceTree = "<group>"; };
 		84B41C88276E6AB600CD270F /* PlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesVC.swift; sourceTree = "<group>"; };
 		84B41C8A276E778300CD270F /* addPlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addPlacesVC.swift; sourceTree = "<group>"; };
 		84B41C8C276E788100CD270F /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				84BDE0BF27653C1B00CF20F9 /* SignVC.swift */,
 				84B41C88276E6AB600CD270F /* PlacesVC.swift */,
 				84B41C8A276E778300CD270F /* addPlacesVC.swift */,
+				8484632D276F931B001E8CD6 /* PlacesModel.swift */,
 				84B41C8C276E788100CD270F /* MapVC.swift */,
 				84B41C8E276E7CF900CD270F /* DetailsVC.swift */,
 				84BDE0C127653C1C00CF20F9 /* Main.storyboard */,
@@ -235,6 +238,7 @@
 				84BDE0BC27653C1B00CF20F9 /* AppDelegate.swift in Sources */,
 				84B41C8B276E778300CD270F /* addPlacesVC.swift in Sources */,
 				84B41C8F276E7CF900CD270F /* DetailsVC.swift in Sources */,
+				8484632E276F931B001E8CD6 /* PlacesModel.swift in Sources */,
 				84B41C89276E6AB600CD270F /* PlacesVC.swift in Sources */,
 				84BDE0BE27653C1B00CF20F9 /* SceneDelegate.swift in Sources */,
 			);

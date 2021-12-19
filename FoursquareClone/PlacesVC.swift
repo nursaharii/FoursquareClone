@@ -8,16 +8,35 @@
 import UIKit
 import Parse
 
-class PlacesVC: UIViewController {
+class PlacesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return placeNameArr.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = placeNameArr[indexPath.row]
+        return cell
+    }
+    
 
     @IBOutlet weak var tableView: UITableView!
+    var placeNameArr = [String]()
+    var placeIdArr = [String]()
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        
         navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addBtn))
         
         navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItem.Style.plain, target: self, action: #selector(logoutBtn))
+        getDataFromParse()
         
     }
     
@@ -32,6 +51,31 @@ class PlacesVC: UIViewController {
             }
             else{
                 self.performSegue(withIdentifier: "toSignVC", sender: nil)
+            }
+        }
+    }
+    
+    func getDataFromParse() {
+        let query = PFQuery(className: "Places")
+        query.findObjectsInBackground { objects, error in
+            if error != nil {
+                self.Alert(title: "Error!", message: error?.localizedDescription ?? "Error")
+            }
+            else {
+                if objects != nil {
+                   self.placeIdArr.removeAll(keepingCapacity: false)
+                   self.placeNameArr.removeAll(keepingCapacity: false)
+                    for object in objects! {
+                        if let placeName = object.object(forKey: "name") as? String {
+                            if let placeId = object.objectId {
+                                self.placeNameArr.append(placeName)
+                                self.placeIdArr.append(placeId)
+                            }
+                        }
+                    }
+                    self.tableView.reloadData()
+                }
+                
             }
         }
     }
