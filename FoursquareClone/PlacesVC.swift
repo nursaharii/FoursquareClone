@@ -23,6 +23,7 @@ class PlacesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var placeNameArr = [String]()
     var placeIdArr = [String]()
+    var selectedPlaceId = ""
     
     override func viewDidLoad() {
         
@@ -79,7 +80,16 @@ class PlacesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVC" {
+            let destinationVC = segue.destination as! DetailsVC
+            destinationVC.choosenPlaceId = selectedPlaceId
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedPlaceId = placeIdArr[indexPath.row]
+        performSegue(withIdentifier: "toDetailsVC", sender: nil)
+    }
     func Alert(title: String,message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
